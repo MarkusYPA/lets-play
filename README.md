@@ -45,13 +45,13 @@ A RESTful API for managing Users and Products, built with Spring Boot, Spring Se
 
 ## API Documentation & Usage
 
-Base URL: `http://localhost:8080/api`
+Base URL: `https://localhost:8443/api` (Note: Accepts self-signed certificate)
 
 ### Authentication
 
 **Register (Signup)**
 ```bash
-curl -X POST http://localhost:8080/api/auth/signup \
+curl -k -X POST https://localhost:8443/api/auth/signup \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Jane Doe",
@@ -63,7 +63,7 @@ curl -X POST http://localhost:8080/api/auth/signup \
 
 **Login**
 ```bash
-curl -X POST http://localhost:8080/api/auth/login \
+curl -k -X POST https://localhost:8443/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "jane@example.com",
@@ -76,12 +76,12 @@ curl -X POST http://localhost:8080/api/auth/login \
 
 **Get All Products (Public)**
 ```bash
-curl http://localhost:8080/api/products
+curl -k https://localhost:8443/api/products
 ```
 
 **Create Product (Admin/User)**
 ```bash
-curl -X POST http://localhost:8080/api/products \
+curl -k -X POST https://localhost:8443/api/products \
   -H "Authorization: Bearer <YOUR_JWT_TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -95,12 +95,13 @@ curl -X POST http://localhost:8080/api/products \
 
 **Get All Users**
 ```bash
-curl -X GET http://localhost:8080/api/users \
+curl -k -X GET https://localhost:8443/api/users \
   -H "Authorization: Bearer <YOUR_JWT_TOKEN>"
 ```
 
 ## Project Structure
 
+- `src/main/resources/keystore.p12`: Self-signed certificate for HTTPS.
 - `src/main/java/com/example/lets_play/config`: Security configuration (SecurityFilterChain).
 - `src/main/java/com/example/lets_play/controller`: REST Controllers.
 - `src/main/java/com/example/lets_play/model`: Data entities (User, Product).

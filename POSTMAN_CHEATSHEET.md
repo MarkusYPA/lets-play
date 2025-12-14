@@ -8,7 +8,7 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Signup (Register a new user)**
 **Method:** `POST`
-**URL:** `http://localhost:8080/api/auth/signup`
+**URL:** `https://localhost:8443/api/auth/signup`
 **Body:**
 ```json
 {
@@ -21,7 +21,7 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Login**
 **Method:** `POST`
-**URL:** `http://localhost:8080/api/auth/login`
+**URL:** `https://localhost:8443/api/auth/login`
 **Body:**
 ```json
 {
@@ -30,6 +30,7 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 }
 ```
 **👉 ACTION:** Copy the `token` from the response. You will need it for the next steps!
+**⚠️ NOTE:** In Postman settings, turn **OFF** "SSL certificate verification" since we use a self-signed cert.
 
 ---
 
@@ -37,12 +38,12 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Get All Products (Public)**
 **Method:** `GET`
-**URL:** `http://localhost:8080/api/products`
+**URL:** `https://localhost:8443/api/products`
 **Auth:** None needed.
 
 ### **Create Product (Restricted)**
 **Method:** `POST`
-**URL:** `http://localhost:8080/api/products`
+**URL:** `https://localhost:8443/api/products`
 **Auth:** Select **Bearer Token** type and paste your token.
 **Body:**
 ```json
@@ -55,7 +56,7 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Update Product (Owner Only)**
 **Method:** `PUT`
-**URL:** `http://localhost:8080/api/products/{id}` (Replace `{id}` with an actual ID from the Get All list)
+**URL:** `https://localhost:8443/api/products/{id}` (Replace `{id}` with an actual ID from the Get All list)
 **Auth:** Bearer Token
 **Body:**
 ```json
@@ -69,7 +70,7 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Delete Product (Owner Only)**
 **Method:** `DELETE`
-**URL:** `http://localhost:8080/api/products/{id}`
+**URL:** `https://localhost:8443/api/products/{id}`
 **Auth:** Bearer Token
 
 ---
@@ -78,7 +79,7 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Signup as Admin**
 **Method:** `POST`
-**URL:** `http://localhost:8080/api/auth/signup`
+**URL:** `https://localhost:8443/api/auth/signup`
 **Body:**
 ```json
 {
@@ -91,7 +92,7 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Login as Admin**
 **Method:** `POST`
-**URL:** `http://localhost:8080/api/auth/login`
+**URL:** `https://localhost:8443/api/auth/login`
 **Body:**
 ```json
 {
@@ -102,5 +103,5 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 
 ### **Get All Users (Admin Only)**
 **Method:** `GET`
-**URL:** `http://localhost:8080/api/users`
+**URL:** `https://localhost:8443/api/users`
 **Auth:** Bearer Token (must use the Admin token)
