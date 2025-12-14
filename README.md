@@ -23,7 +23,21 @@ A RESTful API for managing Users and Products, built with Spring Boot, Spring Se
 ## Setup & Run
 
 1.  **Clone the repository** (if you haven't already).
-2.  **Start MongoDB**.
+2.  **Start MongoDB**.  
+    On Mac:
+    ```bash
+    brew services start mongodb-community
+    ```
+    On Linux:
+    ```bash
+    sudo service mongod start
+    ```
+    On Windows:
+    ```bash
+    net start MongoDB
+    ```
+
+
 3.  **Run the application**:
     ```bash
     ./mvnw spring-boot:run
