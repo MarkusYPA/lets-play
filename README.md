@@ -10,6 +10,10 @@ A RESTful API for managing Users and Products, built with Spring Boot, Spring Se
 - **Public Access**: View products without logging in.
 - **Security**: Password hashing (BCrypt), Input validation.
 
+## Documentation
+- [Project Structure & File Guide](PROJECT_STRUCTURE.md) - **Read this if you are new to Spring Boot!**
+- [Postman Cheat Sheet](POSTMAN_CHEATSHEET.md) - Copy/Paste JSON for easy testing.
+
 ## Prerequisites
 
 - Java 25 (or compatible JDK)
