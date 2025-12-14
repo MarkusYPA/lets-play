@@ -105,3 +105,9 @@ Copy and paste these JSON snippets into the **Body -> raw -> JSON** section of P
 **Method:** `GET`
 **URL:** `https://localhost:8443/api/users`
 **Auth:** Bearer Token (must use the Admin token)
+
+### **Get My User Details (User or Admin)**
+**Method:** `GET`
+**URL:** `https://localhost:8443/api/users/{id}` (Replace `{id}` with your own user ID from the login response)
+**Auth:** Bearer Token
+*Note: Users can only view their own profile. Admins can view any profile.*
