@@ -1,8 +1,11 @@
 package com.example.lets_play.repository;
+
 import com.example.lets_play.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.Optional;
 
 public interface UserRepository extends MongoRepository<User, String> {
-    // Spring Data automatically implements this custom method:
-    User findByUsername(String username);
+    Optional<User> findByEmail(String email);
+
+    Boolean existsByEmail(String email);
 }
