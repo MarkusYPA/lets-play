@@ -21,6 +21,7 @@ public class ProductController {
     private ProductRepository productRepository;
 
     @GetMapping
+    @jakarta.annotation.security.PermitAll
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }

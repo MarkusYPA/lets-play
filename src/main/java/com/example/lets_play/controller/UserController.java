@@ -27,7 +27,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+    @org.springframework.security.access.prepost.PostAuthorize("returnObject.body.email == authentication.name or hasRole('ADMIN')")
     public ResponseEntity<User> getUserById(@PathVariable String id) {
         return userRepository.findById(id)
                 .map(ResponseEntity::ok)
@@ -35,7 +36,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody User userDetails) {
         return userRepository.findById(id)
                 .map(user -> {
